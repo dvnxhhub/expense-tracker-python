@@ -30,10 +30,26 @@ while True:
         break
     except ValueError:
       print("Invalid amount. Please enter a number.")
+      
+while True:
+    category=input("enter  the category: ").strip()
+    if category== "":
+        print("category cannot be empty ")
+        continue
+    break
+  
+        
+while True:
     
-category=input("enter  the category: ")
+    
+    description=input("enter the description: ").strip()
+    if description=="":
+        print("descrption cannot be empty")
+        continue
+    break
+    
 
-description=input("enter the description: ")
+
 expense = {
     "amount": amount,
     "category": category,
@@ -47,6 +63,6 @@ for expense in expenses:
     
     
 print(" total amount  is: ",total)   
-    
+            
 
 
