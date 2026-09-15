@@ -1,6 +1,29 @@
 def get_app_name():
     return "Expense Tracker"
 
+def get_valid_amount():
+     while True:
+        
+         try:
+             amount=float(input("enter the amount: "))
+             if amount <= 0:
+                 print("entered  number  must be  positve")
+                 continue
+             return amount
+         except ValueError:
+             print("invalid value")
+
+def get_valid_text(field_name):
+     while True:
+        value=input(f"enter the field name {field_name}: ").strip()
+        if value =="":
+            print(f"{field_name.capitalize()} cannot be empty")
+            continue
+        return value
+
+
+
+
 
 if __name__ == "__main__":
     print(get_app_name())
@@ -21,33 +44,9 @@ expense={
         "description":"Bus fair"
     }
 expenses.append(expense) 
-while True:
-    try:
-        amount=float(input("enter the  amount: "))
-        if amount <=0:
-            print("the  number  must  be  positive")
-            continue
-        break
-    except ValueError:
-      print("Invalid amount. Please enter a number.")
-      
-while True:
-    category=input("enter  the category: ").strip()
-    if category== "":
-        print("category cannot be empty ")
-        continue
-    break
-  
-        
-while True:
-    
-    
-    description=input("enter the description: ").strip()
-    if description=="":
-        print("descrption cannot be empty")
-        continue
-    break
-    
+amount=get_valid_amount()
+category=get_valid_text("category")
+description=get_valid_text("descrption")
 
 
 expense = {
