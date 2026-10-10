@@ -1,4 +1,6 @@
+
 def get_app_name():
+    
     return "Expense Tracker"
 
 def get_valid_amount():
@@ -25,43 +27,44 @@ def get_valid_text(field_name):
 
 
 
-if __name__ == "__main__":
+def main():
     print(get_app_name())
     expenses = []
 
-expense = {
-    "amount": 250.0,
-    "category": "Food",
-    "description": "Lunch"
-}
-expenses.append(expense)
-
-
-
-expense={
-        "amount":100.0,
-        "category":"travel",
-        "description":"Bus fair"
+    expense = {
+        "amount": 250.0,
+        "category": "Food",
+        "description": "Lunch"
     }
-expenses.append(expense) 
-amount=get_valid_amount()
-category=get_valid_text("category")
-description=get_valid_text("descrption")
+    expenses.append(expense)
 
 
-expense = {
-    "amount": amount,
-    "category": category,
-    "description": description
-}
-expenses.append(expense)
-print(expenses)
-total  =  0
-for expense in expenses:
-    total=total+expense["amount"]
-    
-    
-print(" total amount  is: ",total)   
-            
+
+    expense={
+            "amount":100.0,
+            "category":"travel",
+            "description":"Bus fair"
+        }
+    expenses.append(expense) 
+    amount=get_valid_amount()
+    category=get_valid_text("category")
+    description=get_valid_text("description")
+
+
+    expense = {
+        "amount": amount,
+        "category": category,
+        "description": description
+    }
+    expenses.append(expense)
+    print(expenses)
+    total  =  0
+    for expense in expenses:
+        total=total+expense["amount"]
+        
+        
+    print(" total amount  is: ",total)   
+if __name__ == "__main__":
+    main()           
 
 
